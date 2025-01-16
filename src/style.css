@@ -1,0 +1,33 @@
+.wp-block-up-meta-gutenberg-meta-display {
+    padding: 1em;
+    margin: 1em 0;
+}
+
+.wp-block-up-meta-gutenberg-meta-display .meta-display {
+    font-size: 1.1em;
+    line-height: 1.4;
+}
+
+.wp-block-up-meta-gutenberg-meta-display .meta-display-placeholder {
+    color: #757575;
+    font-style: italic;
+    margin: 0;
+}
+
+/* Styles spécifiques pour les différents types de filtres */
+.wp-block-up-meta-gutenberg-meta-display[data-filter-type="price"] .meta-display {
+    font-weight: bold;
+    color: #2c3338;
+}
+
+.wp-block-up-meta-gutenberg-meta-display[data-filter-type="title"] .meta-display {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.wp-block-up-meta-gutenberg-meta-display[data-filter-type="reference"] .meta-display {
+    font-family: monospace;
+    background: #f0f0f1;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+} 

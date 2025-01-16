@@ -1,0 +1,24 @@
+# Dependencies
+/node_modules
+/vendor
+
+# Build files
+/build
+*.map
+
+# IDE and Editor files
+.idea/
+.vscode/
+*.swp
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Misc
+*.log
+*.zip
+*.bak
+*.cache
+.cache/

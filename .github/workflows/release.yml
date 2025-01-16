@@ -1,0 +1,48 @@
+name: Release Plugin
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: |
+          npm install
+          npm install @wordpress/scripts@30.8.1 --save-dev
+        
+      - name: Build
+        run: npm run build
+        
+      - name: Create plugin archive
+        run: |
+          # Create a clean directory for the plugin
+          mkdir up-meta-gutenberg
+          
+          # Copy only the necessary files
+          cp -r build up-meta-gutenberg/
+          cp *.php up-meta-gutenberg/
+          cp readme.txt up-meta-gutenberg/
+          cp LICENSE up-meta-gutenberg/
+          cp README.md up-meta-gutenberg/
+          
+          # Create ZIP file
+          zip -r up-meta-gutenberg.zip up-meta-gutenberg
+          
+      - name: Upload Release Asset
+        uses: softprops/action-gh-release@v1
+        with:
+          files: up-meta-gutenberg.zip

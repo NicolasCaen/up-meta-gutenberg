@@ -1,0 +1,52 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "up-meta-gutenberg/meta-display",
+	"version": "1.0.0",
+	"title": "Meta Display",
+	"category": "pixelea",
+	"icon": "database",
+	"description": "Affiche et filtre les métadonnées",
+	"attributes": {
+		"metaKey": {
+			"type": "string",
+			"default": ""
+		},
+		"filterType": {
+			"type": "string",
+			"default": "text"
+		},
+		"align": {
+			"type": "string"
+		}
+	},
+	"supports": {
+		"html": false,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true,
+			"fontFamily": true,
+			"fontStyle": true,
+			"fontWeight": true,
+			"letterSpacing": true,
+			"textTransform": true,
+			"textDecoration": true
+		},
+		"color": {
+			"text": true,
+			"background": true,
+			"gradients": true,
+			"link": true
+		},
+		"align": true,
+		"alignWide": true
+	},
+	"textdomain": "up-meta-gutenberg",
+	"editorScript": "file:./index.js",
+	"style": "file:./style.css",
+	"render": "file:./render.php"
+}
